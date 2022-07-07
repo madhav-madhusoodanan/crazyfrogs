@@ -2,7 +2,7 @@ import Rainbow from "../components/rainbow"
 import Hero from "../components/hero/index"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
-import About from "../components/home/About"
+// import About from "../components/home/About"
 
 export default function Home() {
     return (
