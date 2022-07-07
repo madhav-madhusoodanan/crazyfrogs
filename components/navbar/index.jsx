@@ -5,38 +5,23 @@ const Navbar = () => {
     const [visible, setVisible] = useState(false)
     return (
         <div className="overflow-hidden w-[300px] lg:relative lg:w-full lg:mx-auto">
-            <img src="/logo.png" className="fixed z-10 w-36 lg:hidden left-4" />
+            <img src="/raptures_logo.svg" className="fixed z-10 h-8 lg:hidden left-4 my-auto top-4" />
             <div
                 className="z-10 fixed right-0 h-full w-[300px] lg:w-full lg:h-20 bg-bg navContainer transition-all duration-500 ease-[cubic-bezier(0.87,0,0.13,1)] lg:transition-none"
                 data-visible={visible}
             >
                 <div className="h-full w-full relative flex flex-row lg:max-w-[1184px] lg:mx-auto">
                     <div className="w-[80px] hidden lg:block invisible"></div>
-                    <img src="/logo.png" className="w-56 hidden lg:block" />
+                    <img src="/raptures_logo.svg" className="h-8 hidden lg:block my-auto" />
                     <div className="flex flex-col gap-12 pt-28 pl-8 lg:flex-row lg:py-4 lg:my-auto lg:mx-auto lg:h-full">
-                        <Link href="/" className="lg:my-auto">
-                            <img
-                                src="/home-nav.svg"
-                                className="h-4 self-start lg:h-2 lg:my-auto cursor-pointer"
-                            />
+                        <Link href="/" className="lg:my-4">
+                            <p className="text-4xl lg:text-xl font-bold my-4 text-white">Home</p>
                         </Link>
-                        <Link href="/" className="lg:my-auto">
-                            <img
-                                src="/license-nav.svg"
-                                className="h-4 self-start lg:h-2 lg:my-auto cursor-pointer"
-                            />
+                        <Link href="/" className="lg:my-4">
+                            <p className="text-4xl lg:text-xl font-bold my-4 text-white">Team</p>
                         </Link>
-                        <Link href="/roadmap" className="lg:my-auto">
-                            <img
-                                src="/roadmap-nav.svg"
-                                className="h-4 self-start lg:h-2 lg:my-auto cursor-pointer"
-                            />
-                        </Link>
-                        <Link href="/mint" className="lg:my-auto">
-                            <img
-                                src="/mint-nav.svg"
-                                className="h-4 self-start lg:hidden cursor-pointer"
-                            />
+                        <Link href="/roadmap" className="lg:my-4">
+                            <p className="text-4xl lg:text-xl font-bold my-4 text-white">Contact</p>
                         </Link>
                     </div>
                     <div className="absolute bottom-8 left-8 flex flex-row gap-4 lg:top-4 lg:right-4 lg:left-auto lg:relative">

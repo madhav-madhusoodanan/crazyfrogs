@@ -8,21 +8,12 @@
     }
   }
 
-@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
 * {
     font-family: "Inter", sans-serif;
 }
 
-h1#blackhan {
-    font-family: "Black Han Sans", sans-serif;
-}
-
-/* .navContainer {
-    transition: all;
-    animation-duration: 500ms;
-    transition-timing-function: cubic-bezier(0.87, 0, 0.13, 1);
-} */
 @media screen and (max-width: 1024px) {
     .navContainer[data-visible="false"] {
         transform: translateX(100%);
@@ -39,4 +30,91 @@ h1#blackhan {
         display:  none;
     }
 
+}
+
+.button {
+    --background-color: white;
+    --border-color: #7a63ff;
+    --border-width: 0.5em;
+    --edge-size: 0.5em;
+
+    border: 0;
+    isolation: isolate;
+    padding: 0.5em 1.5em;
+    background: var(--background-color);
+    position: relative;
+    color: white;
+
+    -webkit-clip-path: polygon(
+      0% 0.75em,
+      0.75em 0,
+      100% 0,
+      100% calc(100% - 0.75em),
+      calc(100% - 0.75em) 100%,
+      0 100%
+    );
+    clip-path: polygon(
+        0% 0.75em,
+        0.75em 0,
+        100% 0,
+        100% calc(100% - 0.75em),
+        calc(100% - 0.75em) 100%,
+        0 100%
+    );
+}
+.button::before,
+.button::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+
+.button::before {
+    background: var(--border-color);
+    z-index: -2;
+}
+
+.button::after {
+    background: #212121;
+    z-index: -1;
+    -webkit-clip-path: polygon(
+      0.25em 1em,
+      1em 0.25em,
+      calc(100% - 0.25em) 0.25em,
+      calc(100% - 0.25em) calc(100% - 1em),
+      calc(100% - 1em) calc(100% - 0.25em),
+      0.25em calc(100% - 0.25em)
+    );
+    clip-path: polygon(
+      0.25em 1em,
+      1em 0.25em,
+      calc(100% - 0.25em) 0.25em,
+      calc(100% - 0.25em) calc(100% - 1em),
+      calc(100% - 1em) calc(100% - 0.25em),
+      0.25em calc(100% - 0.25em)
+    );
+
+    transition: clip-path 500ms;
+    /* transition-timing-function: cubic-bezier(0.87,0,0.13,1);
+     */
+}
+
+.button:where(:hover, :focus)::after {
+    -webkit-clip-path: polygon(
+      calc(100% - 0.25em) calc(100% - 1em),
+      calc(100% - 0.25em) 0.25em,
+      calc(100% - 0.25em) 0.25em,
+      calc(100% - 0.25em) calc(100% - 1em),
+      calc(100% - 1em) calc(100% - 0.25em),
+      calc(100% - 1em) calc(100% - 0.25em)
+    );
+
+    clip-path: polygon(
+      calc(100% - 0.25em) calc(100% - 1em),
+      calc(100% - 0.25em) 0.25em,
+      calc(100% - 0.25em) 0.25em,
+      calc(100% - 0.25em) calc(100% - 1em),
+      calc(100% - 1em) calc(100% - 0.25em),
+      calc(100% - 1em) calc(100% - 0.25em)
+    );
 }
